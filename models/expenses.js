@@ -2,8 +2,6 @@ const Sequelize = require('sequelize');
 
 const sequelize = require('../util/database');
 
-const User = require('./users');
-
 const Expense = sequelize.define('expenses', {
     id: {
         type: Sequelize.INTEGER,
@@ -17,7 +15,5 @@ const Expense = sequelize.define('expenses', {
     
 });
 
-Expense.belongsTo(User);
-User.hasMany(Expense);
 
 module.exports = Expense;
