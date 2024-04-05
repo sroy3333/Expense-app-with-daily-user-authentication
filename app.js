@@ -16,6 +16,9 @@ app.use(express.json());
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 
+User.hasMany(Expense);
+Expense.belongsTo(User);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/login.html', (req, res) => {
